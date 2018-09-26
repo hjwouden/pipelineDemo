@@ -14,5 +14,12 @@ pipeline{
                 sh 'npm test'
             }
         }
+
+        stage('Package'){
+            steps {
+                sh 'echo packaging...'
+                sh 'docker build -t bnelford/marco-polo-node .'
+            }
+        }
     }
 }
